@@ -1,0 +1,64 @@
+body {
+    height: 5000px;
+    background: #cbd4b0;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    white-space: nowrap;
+}
+
+.header h1 {
+    margin: 50px 0 0 0;
+}
+
+.header .header_wrap {
+    display: flex;
+    align-items: center;
+    /* height: 70px; */
+    padding: 0 250px;
+}
+
+.gnb {
+    margin: 0 0 0 auto;
+}
+
+.header .nav>ul {
+    display: flex;
+    margin: 0 0 0 650px;
+    gap: 30px;
+}
+
+.header .utils>li {
+    font-size: 14px;
+    color: #555;
+}
+
+
+.header .gnb {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: center;
+}
+
+.header .gnb>ul {
+    display: flex;
+    gap: 40px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.header .sub>li {
+    font-size: 15px;
+    font-weight: 300;
+
+}
+
+
+
+/* 탑 배너 끝 */
