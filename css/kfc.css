@@ -1,15 +1,41 @@
-body {
-    height: 5000px;
-    background: #cbd4b0;
+.Curtain {
+    background-image: url(../images/kfc_sprite.png);
+    width: 250px;
+    height: 120px;
 }
 
+.tit {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 25px 0 25px 0;
+}
+
+.btn {
+    display: inline-block;
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+    background: #211817;
+    border-radius: 16px;
+    color: #fff;
+    padding: 24px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 700;
+}
+
+/* ----------------------------------------------- */
+
 .header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 999;
+    z-index: 9999;
     white-space: nowrap;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
 }
 
 .header h1 {
@@ -19,7 +45,6 @@ body {
 .header .header_wrap {
     display: flex;
     align-items: center;
-    /* height: 70px; */
     padding: 0 250px;
 }
 
@@ -28,37 +53,438 @@ body {
 }
 
 .header .nav>ul {
+
     display: flex;
     margin: 0 0 0 650px;
     gap: 30px;
 }
 
+.header .utils {
+    position: relative;
+    margin: 0 50px 20px 0;
+    cursor: pointer;
+}
+
 .header .utils>li {
+    margin: 50px 0 0 0;
     font-size: 14px;
     color: #555;
+    /* 로그인,주문내역조회,고객센터,인재채용 */
 }
+
+/* .header .utils>li~li::before {
+    content: "d";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    background: #ddd;
+} */
+
+.header .utils span::before {
+    content: "";
+    position: absolute;
+    background: url(../images/icon_shop_3.png);
+    top: 35px;
+    right: -15px;
+    width: 33px;
+    height: 30px;
+}
+
+.header .menu {
+    margin: 0 50px 20px 0;
+}
+
+.header .menu>li {
+
+    position: relative;
+    margin: 10px 0 0 0;
+    font-size: 22px;
+    font-weight: 500;
+    /* 딜리버리 스토어 이벤트 */
+}
+
+.header .menu>li::before {
+    content: "";
+
+    position: absolute;
+    display: block;
+    top: 50px;
+    left: 50%;
+    z-index: 999;
+    background: #555;
+    width: 0;
+    transform: translate(-50%, 0);
+    height: 1px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.header .menu>li:hover::before {
+    width: 100%;
+    height: 1px;
+    opacity: 1;
+}
+
+.header .menu>li::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 48px;
+    left: 50%;
+    z-index: 999;
+    background: #555;
+    border-radius: 50%;
+    transform: translate(-50%, 0);
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.header .menu>li:hover::after {
+    width: 6px;
+    height: 6px;
+    opacity: 1;
+}
+
+/* -------------------------------------------- */
 
 
 .header .gnb {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     text-align: center;
 }
 
+.header .gnb:before {
+    content: "";
+    position: absolute;
+    top: 130px;
+    left: 0;
+    width: 0;
+    height: 0;
+    background: #fff;
+    z-index: 999;
+
+}
+
+.header .gnb:hover::before {
+    height: 240px;
+    width: 500px;
+}
+
+.header .sub {
+    height: 0;
+    overflow: hidden;
+
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 999;
+
+    text-align: center;
+    width: 100%;
+    line-height: 30px;
+    opacity: 0;
+    transition: 0.3s;
+
+}
+
+.header .gnb:hover>ul>li .sub {
+    height: 160px;
+    opacity: 1;
+}
+
+
 .header .gnb>ul {
     display: flex;
     gap: 40px;
-    font-size: 22px;
-    font-weight: 600;
 }
 
 .header .sub>li {
     font-size: 15px;
     font-weight: 300;
+}
 
+.header .sub>li:hover {
+    color: red;
+    font-weight: 400;
+}
+
+
+/* 탑 배너 끝 */
+
+.mainVisual {
+    position: relative;
+    cursor: pointer;
+}
+
+.itm {
+    height: 440px;
+}
+
+.mainSlide .itm01 {
+    background: url(../images/main_v01.png) no-repeat center center/cover;
+}
+
+.mainSlide .itm02 {
+    background: url(../images/main_v02.png) no-repeat center center/cover;
+}
+
+.mainSlide .itm03 {
+    background: url(../images/main_v03.png) no-repeat center center/cover;
+}
+
+.mainSlide .itm04 {
+    background: url(../images/main_v04.png) no-repeat center center/cover;
+}
+
+.mainSlide .itm05 {
+    background: url(../images/main_v05.png) no-repeat center center/cover;
+}
+
+.mainSlide .itm06 {
+    background: url(../images/main_v06.png) no-repeat center center/cover;
+}
+
+/* --------------▼ 버튼 ▼-------------- */
+
+.mainVisual .slick-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 999;
+}
+
+.mainVisual .slick-dots>li {
+    display: inline-block;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.mainVisual .slick-dots>li button {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background: #afa197;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 8px;
+
+    border: none;
+    font-size: 0;
+}
+
+.mainVisual .slick-dots>li button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #FFF;
+}
+
+.mainVisual .slick-dots>li.slick-active button::after {
+    width: 100%;
+}
+
+.mainVisual .arrows {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+
+    max-width: 1450px;
+    width: 100%;
+}
+
+.mainVisual .arrows i {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 30px;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.mainVisual .arrows .left {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.mainVisual:hover .arrows .left {
+    opacity: 1;
+    transform: translate(30px, 0);
+}
+
+.mainVisual .arrows .right {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.mainVisual:hover .arrows .right {
+    opacity: 0.1;
+    transform: translate(-30px, 0);
+}
+
+
+/* -------------------버튼 끝---------------------- */
+
+.serve .paje {
+    display: flex;
+    gap: 28px;
+    padding: 35px 0;
+    cursor: pointer;
+}
+
+.serve img {
+    max-width: 100%;
+    vertical-align: top;
+    border-radius: 20px;
+}
+
+/* --------------------------------------- */
+
+.mainContent {
+    position: relative;
+    background: #f8f8f8;
+    padding-bottom: 50px;
+}
+
+.mainContent h2 {
+    margin: 40px 0;
+}
+
+.mainContent .case {
+    text-align: center;
+    margin: 30px 0;
 }
 
 
 
-/* 탑 배너 끝 */
+.content_Slide {
+    text-align: center;
+    cursor: pointer;
+}
+
+.content_Slide figure {
+    background: #FFF;
+    border-radius: 25px;
+    margin: 0 10px 40px 0;
+    box-shadow: 4px 4px 10px 1px rgba(180, 180, 180, 0.3);
+}
+
+.content_Slide img {
+    margin: 25px 0;
+}
+
+.content_Slide h3 {
+    font-size: 25px;
+    font-weight: 600;
+    margin: 50px 0 0 0;
+}
+
+.content_Slide p {
+    color: #777;
+    margin: 10px 0 20px 0;
+}
+
+.content_Slide strong {
+    display: block;
+    position: relative;
+    font-size: 20px;
+    color: red;
+    margin: 30px 0 50px 0;
+}
+
+.content_Slide strong::before {
+    content: "";
+    position: absolute;
+    background: url(../images/ico_price_red_sm.png);
+    top: 3px;
+    left: 225px;
+    width: 16px;
+    height: 16px;
+
+
+}
+
+/* -------------------- 버튼---------------------------- */
+
+
+.mainContent .arrows {
+    position: absolute;
+    top: 13%;
+    left: 86%;
+    z-index: 999;
+
+    max-width: 140px;
+    width: 100%;
+}
+
+.mainContent .arrows i {
+    padding: 10px;
+    background: none;
+    border: 2px solid rgb(255, 0, 0, 0.5);
+    border-radius: 10px;
+    color: rgb(255, 0, 0, 0.5);
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.mainContent .arrows .left:hover {
+    border: 2px solid red;
+    color: red;
+}
+
+.mainContent .arrows .right:hover {
+    border: 2px solid red;
+    color: red;
+}
+
+/* -------------------버튼 끝------------------------- */
+
+.banner_content {
+    position: relative;
+    height: 372px;
+    background-color: rgb(228, 27, 43);
+}
+
+.banner_content .img {
+    position: absolute;
+    top: -48px;
+    right: 300px;
+}
+
+.banner_content .txt {
+    position: absolute;
+    display: inline-block;
+    top: 60px;
+    left: 400px;
+}
+
+.banner_content .txt h3 {
+    color: #fff;
+}
+
+.banner_content .txt p {
+    font-size: 50px;
+    line-height: 50px;
+    margin: 30px 0;
+    color: #fff;
+    max-width: 350px;
+}
+
+.banner_content .case {}

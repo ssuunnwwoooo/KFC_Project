@@ -23,14 +23,14 @@ body {
 }
 
 .sec {
-    padding: 100px;
+    padding: 0 100px 0 100px;
 }
 
-.sec .tit {
+/* .sec .tit {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
-}
+} */
 
 .bg {
     background: #f9f9f9;
