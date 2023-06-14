@@ -312,7 +312,6 @@
     border-radius: 50%;
     color: #fff;
     font-size: 30px;
-    opacity: 0.5;
     cursor: pointer;
     transition: 1s;
 }
@@ -324,7 +323,6 @@
 }
 
 .mainVisual:hover .arrows .left {
-    opacity: 1;
     transform: translate(30px, 0);
 }
 
@@ -335,7 +333,6 @@
 }
 
 .mainVisual:hover .arrows .right {
-    opacity: 0.1;
     transform: translate(-30px, 0);
 }
 
@@ -402,8 +399,8 @@
 }
 
 .content_Slide strong {
-    display: block;
     position: relative;
+    display: block;
     font-size: 20px;
     color: red;
     margin: 30px 0 50px 0;
@@ -414,10 +411,10 @@
     position: absolute;
     background: url(../images/ico_price_red_sm.png);
     top: 3px;
-    left: 225px;
+    left: 190px;
     width: 16px;
     height: 16px;
-
+    /* 화면 크키에 따라 요소 위치가 바뀜 */
 
 }
 
@@ -473,18 +470,41 @@
     display: inline-block;
     top: 60px;
     left: 400px;
+    max-width: 350px;
 }
 
 .banner_content .txt h3 {
-    color: #fff;
+    color: rgb(255, 255, 255, 0.7);
+    font-size: 23px;
+    font-weight: 200;
 }
 
 .banner_content .txt p {
     font-size: 50px;
+    font-weight: 700;
     line-height: 50px;
     margin: 30px 0;
     color: #fff;
-    max-width: 350px;
+    font-family: 'Noto Serif KR', serif;
+    font-style: italic;
 }
 
-.banner_content .case {}
+.banner_content .case {
+    max-width: 250px;
+}
+
+/* ---------------------------------------------------- */
+
+.sns {
+    background: url(../images/bg_fandom.jpg) no-repeat center center/cover;
+}
+
+.sns_content {
+    display: flex;
+
+}
+
+.sns_content li {
+    width: 100%;
+    height: auto;
+}
