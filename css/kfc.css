@@ -1,3 +1,9 @@
+:root {
+    --mc: #E21E2D;
+}
+
+
+
 .Curtain {
     background-image: url(../images/kfc_sprite.png);
     width: 250px;
@@ -113,7 +119,7 @@
     top: 50px;
     left: 50%;
     z-index: 999;
-    background: #555;
+    background: var(--mc);
     width: 0;
     transform: translate(-50%, 0);
     height: 1px;
@@ -134,7 +140,7 @@
     top: 48px;
     left: 50%;
     z-index: 999;
-    background: #555;
+    background: var(--mc);
     border-radius: 50%;
     transform: translate(-50%, 0);
     width: 0px;
@@ -212,7 +218,7 @@
 }
 
 .header .sub>li:hover {
-    color: red;
+    color: var(--mc);
     font-weight: 400;
 }
 
@@ -224,7 +230,7 @@
     cursor: pointer;
 }
 
-.itm {
+.mainSlide .itm {
     height: 440px;
 }
 
@@ -402,7 +408,7 @@
     position: relative;
     display: block;
     font-size: 20px;
-    color: red;
+    color: var(--mc);
     margin: 30px 0 50px 0;
 }
 
@@ -434,21 +440,21 @@
 .mainContent .arrows i {
     padding: 10px;
     background: none;
-    border: 2px solid rgb(255, 0, 0, 0.5);
+    border: 2px solid rgb(255, 30, 45, 0.5);
     border-radius: 10px;
-    color: rgb(255, 0, 0, 0.5);
+    color: rgb(255, 30, 45, 0.5);
     font-size: 35px;
     cursor: pointer;
 }
 
 .mainContent .arrows .left:hover {
-    border: 2px solid red;
-    color: red;
+    border: 2px solid var(--mc);
+    color: var(--mc);
 }
 
 .mainContent .arrows .right:hover {
-    border: 2px solid red;
-    color: red;
+    border: 2px solid var(--mc);
+    color: var(--mc);
 }
 
 /* -------------------버튼 끝------------------------- */
@@ -456,7 +462,7 @@
 .banner_content {
     position: relative;
     height: 372px;
-    background-color: rgb(228, 27, 43);
+    background-color: var(--mc);
 }
 
 .banner_content .img {
@@ -501,10 +507,195 @@
 
 .sns_content {
     display: flex;
-
+    gap: 15px;
 }
 
 .sns_content li {
     width: 100%;
     height: auto;
+    margin: 15px 0 50px 0;
+    background: #f9f9f9;
+    border-radius: 25px;
+    box-shadow: 4px 4px 10px 1px rgba(180, 180, 180, 0.3);
 }
+
+.sns_content li img {
+    border-radius: 25px 25px 0 0;
+}
+
+.sns_content li .txt {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 15px;
+}
+
+.sns_content li .txt h3 {
+    font-size: 18px;
+    color: #777;
+}
+
+.sns_content li .txt p {
+    color: var(--mc);
+    font-weight: 600;
+}
+
+/* ---------------------------------------------------- */
+
+.youtube {
+    padding: 0px 100px 100px 100px;
+    background: #f8f8f8;
+}
+
+.youtube .tit {
+    margin: 40px 0 50px 0;
+}
+
+.youtube .history {
+    display: flex;
+    gap: 100px;
+}
+
+.youtube .history>* {
+    flex: 1;
+}
+
+.youtube .history .history_menu li {
+    position: relative;
+    margin: 0 0 30px 0;
+    padding: 0 0 0 30px;
+    display: flex;
+    gap: 30px;
+    cursor: pointer;
+}
+
+.youtube .history .history_menu li strong {
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 20px;
+}
+
+.youtube .history .history_menu li:hover {
+    color: var(--mc);
+    font-weight: 600;
+}
+
+.youtube .history .history_menu li:hover::before {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: -1px;
+    width: 5px;
+    height: 15px;
+    background: var(--mc);
+}
+
+.youtube .history .history_menu li:hover::after {
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: -16px;
+    width: 33px;
+    height: 35px;
+    background: url(../images/icon_shop_3.png);
+}
+
+.youtube .history .history_menu li span {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19px;
+}
+
+
+.youtube .history .history_content li {
+    height: 0;
+    overflow: hidden;
+}
+
+.youtube .history .history_content li.on {
+    height: auto;
+}
+
+.youtube .history .history_content figure {
+    margin: 0 0 0 50px;
+    display: flex;
+}
+
+.youtube .history .history_content figure .link_box {
+    padding: 20px 20px;
+    background: #fff;
+    border-radius: 25px;
+    box-shadow: 4px 4px 10px 1px rgba(180, 180, 180, 0.3);
+}
+
+/* ------------------------------------------------------ */
+
+.map {
+    border-bottom: 1px solid #ddd;
+    padding: 40px 100px;
+}
+
+.map h3 {
+    margin: 0 0 50px 0;
+}
+
+.site_map {}
+
+.site_map>ul {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.site_map .menu {}
+
+.site_map .menu>li>a {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.site_map .menu .sub {
+    margin: 20px 0;
+    font-size: 13px;
+    color: #777;
+    line-height: 20px;
+    font-weight: 300;
+}
+
+/* -------------------------------------------------- */
+
+footer {
+    padding: 40px 0;
+    background: #202020;
+    color: #666;
+    text-align: center;
+    font-weight: 300;
+    font-size: 12px;
+}
+
+footer .ft1 {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    gap: 15px;
+    color: #888;
+}
+
+footer strong {
+    color: #deac55;
+}
+
+footer address {
+    margin: 20px 0;
+}
+
+/* 
+
+마저 해야할 것
+* 맨 위 탑메뉴 가상요소로 중간에 줄 채우기 
+* 다단메뉴 흰색으로 바탕 채우기
+* 가상요소 화면 크기에 따라 위치 바뀌는거 해결
+* youtube 글자 클릭하면 색상,아이콘,굵기 고정되는거
+  + 더 깔끔하고 가독성 있게 디자인 하기
+* 푸터 마무리
+
+*/
