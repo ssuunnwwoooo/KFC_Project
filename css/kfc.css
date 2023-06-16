@@ -42,16 +42,21 @@
     white-space: nowrap;
     background: #fff;
     border-bottom: 1px solid #ddd;
+    padding: 0 0 5px 0;
 }
 
 .header h1 {
-    margin: 50px 0 0 0;
+    margin: 50px 0 80px 0;
 }
 
 .header .header_wrap {
     display: flex;
     align-items: center;
     padding: 0 250px;
+}
+
+.header.on .header_wrap {
+    height: 110px;
 }
 
 .gnb {
@@ -62,7 +67,7 @@
 
     display: flex;
     margin: 0 0 0 650px;
-    gap: 30px;
+
 }
 
 .header .utils {
@@ -73,20 +78,21 @@
 
 .header .utils>li {
     margin: 50px 0 0 0;
-    font-size: 14px;
-    color: #555;
+    font-size: 13px;
+    color: #777;
     /* 로그인,주문내역조회,고객센터,인재채용 */
 }
 
-/* .header .utils>li~li::before {
-    content: "d";
-    position: absolute;
-    top: 0;
-    left: 0;
+
+.header .utils>li~li::before {
+    content: "";
+    display: inline-block;
     width: 1px;
-    height: 1px;
+    height: 11px;
     background: #ddd;
-} */
+    margin: auto 20px auto auto;
+}
+
 
 .header .utils span::before {
     content: "";
@@ -103,11 +109,11 @@
 }
 
 .header .menu>li {
-
     position: relative;
     margin: 10px 0 0 0;
     font-size: 22px;
     font-weight: 500;
+    z-index: 1000;
     /* 딜리버리 스토어 이벤트 */
 }
 
@@ -169,18 +175,19 @@
 .header .gnb:before {
     content: "";
     position: absolute;
-    top: 130px;
+    top: 90px;
     left: 0;
     width: 0;
     height: 0;
     background: #fff;
     z-index: 999;
 
+
 }
 
 .header .gnb:hover::before {
-    height: 240px;
-    width: 500px;
+    height: 260px;
+    width: 800px
 }
 
 .header .sub {
@@ -387,6 +394,7 @@
     border-radius: 25px;
     margin: 0 10px 40px 0;
     box-shadow: 4px 4px 10px 1px rgba(180, 180, 180, 0.3);
+
 }
 
 .content_Slide img {
@@ -409,19 +417,18 @@
     display: block;
     font-size: 20px;
     color: var(--mc);
-    margin: 30px 0 50px 0;
+    margin: 30px auto 50px auto;
+    width: 100px;
 }
 
 .content_Slide strong::before {
     content: "";
     position: absolute;
     background: url(../images/ico_price_red_sm.png);
-    top: 3px;
-    left: 190px;
+    top: 0;
+    left: 0;
     width: 16px;
     height: 16px;
-    /* 화면 크키에 따라 요소 위치가 바뀜 */
-
 }
 
 /* -------------------- 버튼---------------------------- */
@@ -576,7 +583,6 @@
 
 .youtube .history .history_menu li:hover {
     color: var(--mc);
-    font-weight: 600;
 }
 
 .youtube .history .history_menu li:hover::before {
@@ -605,6 +611,10 @@
     line-height: 19px;
 }
 
+.youtube .history .history_menu li span:hover {
+    font-weight: 500;
+}
+
 
 .youtube .history .history_content li {
     height: 0;
@@ -630,12 +640,12 @@
 /* ------------------------------------------------------ */
 
 .map {
-    border-bottom: 1px solid #ddd;
     padding: 40px 100px;
 }
 
 .map h3 {
     margin: 0 0 50px 0;
+
 }
 
 .site_map {}
@@ -664,38 +674,70 @@
 /* -------------------------------------------------- */
 
 footer {
-    padding: 40px 0;
     background: #202020;
     color: #666;
     text-align: center;
     font-weight: 300;
     font-size: 12px;
+    padding: 0 0 50px 0;
 }
 
-footer .ft1 {
+footer .ft {
+    background: #303030;
+    margin: 20px 0;
+    border-bottom: 1px solid rgb(221, 221, 221, 0.1);
+}
+
+#f1 {
+    background: #404040;
+    padding: 15px 10px;
+    border: none;
+    color: #ddd;
+    width: 150px;
+    line-height: 30px;
+}
+
+footer .fb {
     display: flex;
     justify-content: center;
-    font-size: 15px;
-    gap: 15px;
     color: #888;
+    margin: 50px 0;
 }
 
-footer strong {
+footer .fb strong {
     color: #deac55;
 }
 
-footer address {
-    margin: 20px 0;
+footer .fb li {
+    display: inline-block;
+    font-size: 14px;
+}
+
+footer .fb li~li::before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 11px;
+    background: rgb(221, 221, 221, 0.5);
+    margin: 0 10px;
+}
+
+footer .link {
+    line-height: 18px;
 }
 
 /* 
 
 마저 해야할 것
 * 맨 위 탑메뉴 가상요소로 중간에 줄 채우기 
+
 * 다단메뉴 흰색으로 바탕 채우기
+
 * 가상요소 화면 크기에 따라 위치 바뀌는거 해결
+
 * youtube 글자 클릭하면 색상,아이콘,굵기 고정되는거
   + 더 깔끔하고 가독성 있게 디자인 하기
+
 * 푸터 마무리
 
 */
